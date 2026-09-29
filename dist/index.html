@@ -196,47 +196,42 @@
     }
     .section-lead { max-width: 680px; color: var(--muted); font-size: 1.02rem; }
 
+    .tutorial-layout {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(320px, 420px);
+      gap: 80px;
+      align-items: center;
+    }
+    .tutorial-copy .section-lead { margin-bottom: 24px; }
+    .video-duration {
+      display: inline-flex;
+      align-items: center;
+      gap: 9px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      color: var(--green-800);
+      background: #e2f2eb;
+      font-size: .8rem;
+      font-weight: 700;
+    }
+    .video-duration::before { content: "▶"; color: var(--orange); font-size: .68rem; }
     .video-shell {
-      margin-top: 42px;
-      padding: 10px;
-      border-radius: 28px;
-      background: white;
-      box-shadow: var(--shadow);
+      width: 100%;
+      max-width: 420px;
+      justify-self: center;
+      padding: 8px;
+      border-radius: 26px;
+      background: var(--green-950);
+      box-shadow: 0 24px 54px rgba(0, 62, 54, .2);
     }
-    .video-placeholder {
-      position: relative;
-      min-height: 500px;
-      display: grid;
-      place-items: center;
-      overflow: hidden;
-      border-radius: 20px;
-      background:
-        linear-gradient(120deg, rgba(0,83,72,.88), rgba(0,109,92,.76)),
-        repeating-linear-gradient(135deg, transparent 0 22px, rgba(255,255,255,.06) 22px 44px);
-      color: white;
-      text-align: center;
+    .tutorial-video {
+      display: block;
+      width: 100%;
+      aspect-ratio: 135 / 232;
+      border-radius: 19px;
+      background: #001c18;
+      object-fit: contain;
     }
-    .video-placeholder::after {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 50%, rgba(168,220,32,.16), transparent 40%);
-    }
-    .video-message { position: relative; z-index: 1; max-width: 500px; padding: 32px; }
-    .play {
-      width: 86px;
-      height: 86px;
-      margin: 0 auto 22px;
-      display: grid;
-      place-items: center;
-      border: 2px solid rgba(255,255,255,.8);
-      border-radius: 50%;
-      background: rgba(255,255,255,.12);
-      box-shadow: 0 0 0 12px rgba(255,255,255,.07);
-    }
-    .play svg { margin-left: 5px; }
-    .video-message strong { display: block; margin-bottom: 8px; font-size: 1.35rem; }
-    .video-message span { color: #d7e9e5; }
 
     .download-wrap {
       display: grid;
@@ -405,6 +400,7 @@
       .nav.open .nav-links { width: 100%; display: grid; order: 4; gap: 0; }
       .nav.open .nav-links a { padding: 13px 0; border-top: 1px solid rgba(255,255,255,.12); }
       .hero-grid { grid-template-columns: 1fr .86fr; gap: 34px; }
+      .tutorial-layout { gap: 48px; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: 1fr; }
       .footer-info { grid-template-columns: repeat(3, 1fr); }
@@ -424,7 +420,8 @@
       .hero-grid { grid-template-columns: 1fr; text-align: left; }
       .download-card { padding: 26px 22px; }
       .section { padding: 70px 0; }
-      .video-placeholder { min-height: 330px; }
+      .tutorial-layout { grid-template-columns: 1fr; gap: 34px; }
+      .video-shell { max-width: 380px; }
       .download-wrap, .faq-grid { grid-template-columns: 1fr; gap: 44px; }
       .faq-intro { position: static; }
       .steps { grid-template-columns: 1fr; }
@@ -493,20 +490,18 @@
     </section>
 
     <section class="section section-soft" id="tutorial">
-      <div class="container">
-        <p class="section-kicker">Tutorial em vídeo</p>
-        <h2>Veja como baixar e instalar</h2>
-        <p class="section-lead">Assista ao tutorial antes de começar. Ele mostrará cada etapa para concluir a instalação no seu aparelho.</p>
+      <div class="tutorial-layout container">
+        <div class="tutorial-copy">
+          <p class="section-kicker">Tutorial em vídeo</p>
+          <h2>Atualize o app em menos de um minuto</h2>
+          <p class="section-lead">Assista ao vídeo e siga o passo a passo para baixar e instalar a nova versão no seu Android.</p>
+          <span class="video-duration">Tutorial de 52 segundos</span>
+        </div>
         <div class="video-shell">
-          <div class="video-placeholder" role="img" aria-label="Espaço reservado para o vídeo tutorial">
-            <div class="video-message">
-              <div class="play">
-                <svg width="30" height="34" viewBox="0 0 30 34" fill="none" aria-hidden="true"><path d="M28 13.54a4 4 0 0 1 0 6.92L6 33.16A4 4 0 0 1 0 29.7V4.3A4 4 0 0 1 6 .84l22 12.7Z" fill="currentColor"/></svg>
-              </div>
-              <strong>O vídeo tutorial será adicionado aqui</strong>
-              <span>O espaço já está preparado para receber o arquivo ou link do vídeo.</span>
-            </div>
-          </div>
+          <video class="tutorial-video" controls playsinline preload="metadata" poster="assets/tutorial-atualizacao-poster.jpg" aria-label="Tutorial para baixar e instalar a atualização do app Cartão de TODOS">
+            <source src="assets/tutorial-atualizacao.mp4" type="video/mp4">
+            Seu navegador não consegue reproduzir este vídeo. <a href="assets/tutorial-atualizacao.mp4">Baixe o tutorial</a>.
+          </video>
         </div>
       </div>
     </section>
