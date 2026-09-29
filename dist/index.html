@@ -397,24 +397,6 @@
     .areas-list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 24px; }
     .link-list a { color: var(--lime); font-size: .78rem; text-decoration: underline; text-underline-offset: 3px; }
     .legal { margin: 42px 0 0; padding-top: 26px; border-top: 1px solid rgba(255,255,255,.15); color: #d7e8e4; font-size: .72rem; line-height: 1.65; }
-    .toast {
-      position: fixed;
-      left: 50%;
-      bottom: 24px;
-      z-index: 50;
-      max-width: calc(100% - 32px);
-      padding: 14px 20px;
-      border-radius: 12px;
-      color: white;
-      background: #163e37;
-      box-shadow: 0 18px 42px rgba(0,0,0,.25);
-      font-size: .88rem;
-      font-weight: 600;
-      transform: translate(-50%, 140%);
-      transition: transform .25s ease;
-    }
-    .toast.show { transform: translate(-50%, 0); }
-
     @media (max-width: 1020px) {
       .nav-links { display: none; }
       .nav-actions { margin-left: auto; }
@@ -500,8 +482,8 @@
               <div class="app-meta">Versão atualizada para Android</div>
             </div>
           </div>
-          <div class="file-state">A versão anterior será descontinuada. Instale a atualização para continuar usando o app.</div>
-          <a class="download-btn" href="#" data-pending-download>
+          <div class="file-state">APK para Android disponível agora · 4,73 MB</div>
+          <a class="download-btn" href="assets/Cartao_de_Todos.apk" download="Cartao_de_Todos.apk">
             <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
             Baixar app atualizado
           </a>
@@ -593,7 +575,6 @@
     </div>
   </footer>
 
-  <div class="toast" role="status" aria-live="polite">O arquivo APK será conectado assim que você enviá-lo.</div>
   <script>
     const nav = document.querySelector('.nav');
     const toggle = document.querySelector('.menu-toggle');
@@ -601,15 +582,6 @@
       const open = nav.classList.toggle('open');
       toggle.setAttribute('aria-expanded', String(open));
       toggle.setAttribute('aria-label', open ? 'Fechar menu' : 'Abrir menu');
-    });
-
-    const toast = document.querySelector('.toast');
-    let toastTimer;
-    document.querySelector('[data-pending-download]').addEventListener('click', (event) => {
-      event.preventDefault();
-      clearTimeout(toastTimer);
-      toast.classList.add('show');
-      toastTimer = setTimeout(() => toast.classList.remove('show'), 3200);
     });
   </script>
 </body>
