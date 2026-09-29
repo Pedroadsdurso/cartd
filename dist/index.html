@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Baixe o app atualizado | Cartão de TODOS</title>
+  <title>Atualize agora o app | Cartão de TODOS</title>
   <meta name="description" content="Baixe a versão atualizada do app Cartão de TODOS e veja como instalar no seu celular Android.">
   <meta name="theme-color" content="#005348">
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -76,8 +76,18 @@
       align-items: center;
       gap: 28px;
     }
-    .brand { flex: 0 0 158px; }
-    .brand img { width: 156px; height: auto; }
+    .brand {
+      flex: 0 0 170px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      color: white;
+      text-decoration: none;
+    }
+    .brand img { width: 50px; height: 42px; object-fit: contain; }
+    .brand-copy { display: grid; line-height: 1; }
+    .brand-copy small { margin-bottom: 3px; font-size: .58rem; font-weight: 600; letter-spacing: .04em; }
+    .brand-copy strong { font-size: 1.17rem; font-weight: 800; letter-spacing: -.03em; }
     .nav-links {
       margin-left: auto;
       display: flex;
@@ -123,114 +133,56 @@
     .hero {
       position: relative;
       overflow: hidden;
-      padding: 82px 0 76px;
-      background:
-        radial-gradient(circle at 88% 8%, rgba(168, 220, 32, .24), transparent 22rem),
-        linear-gradient(135deg, #00463d 0%, #006255 65%, #00836d 100%);
+      padding: 68px 0 72px;
+      background: #005f52;
       color: white;
     }
     .hero::before {
       content: "";
       position: absolute;
-      inset: 0;
-      opacity: .16;
-      background-image: radial-gradient(rgba(255,255,255,.8) 1px, transparent 1px);
-      background-size: 22px 22px;
-      mask-image: linear-gradient(to right, transparent, black);
+      inset: 0 0 auto;
+      height: 6px;
+      background: linear-gradient(90deg, var(--lime) 0 72%, var(--orange) 72%);
     }
     .hero-grid {
       position: relative;
       display: grid;
-      grid-template-columns: 1.05fr .95fr;
-      gap: 70px;
+      grid-template-columns: 1.06fr .94fr;
+      gap: 58px;
       align-items: center;
     }
-    .eyebrow {
+    .urgent-label {
       display: inline-flex;
       align-items: center;
-      gap: 10px;
-      margin-bottom: 20px;
-      color: var(--lime);
-      font-size: .78rem;
+      gap: 9px;
+      margin-bottom: 22px;
+      padding: 8px 12px;
+      border-radius: 6px;
+      color: white;
+      background: var(--orange);
+      font-size: .74rem;
       font-weight: 800;
-      letter-spacing: .12em;
+      letter-spacing: .08em;
       text-transform: uppercase;
     }
-    .eyebrow::before { content: ""; width: 34px; height: 3px; border-radius: 99px; background: currentColor; }
+    .urgent-label::before { content: "!"; width: 19px; height: 19px; display: grid; place-items: center; border: 2px solid white; border-radius: 50%; font-size: .7rem; }
     h1, h2, h3, p { margin-top: 0; }
     h1 {
       max-width: 720px;
       margin-bottom: 22px;
-      font-size: clamp(2.35rem, 5vw, 4.35rem);
-      line-height: 1.02;
+      font-size: clamp(2.45rem, 4.7vw, 4rem);
+      line-height: 1.04;
       letter-spacing: -.045em;
     }
     .hero-copy > p {
       max-width: 610px;
       margin-bottom: 30px;
       color: #e4f2ef;
-      font-size: 1.08rem;
+      font-size: 1.12rem;
     }
-    .hero-pills { display: flex; flex-wrap: wrap; gap: 10px; }
-    .hero-pills span {
-      padding: 9px 13px;
-      border: 1px solid rgba(255,255,255,.23);
-      border-radius: 999px;
-      background: rgba(255,255,255,.08);
-      font-size: .82rem;
-      font-weight: 600;
-    }
-    .hero-app {
-      position: relative;
-      min-height: 390px;
-      display: grid;
-      place-items: center;
-    }
-    .app-orbit {
-      position: absolute;
-      width: 360px;
-      height: 360px;
-      border: 1px solid rgba(255,255,255,.16);
-      border-radius: 50%;
-    }
-    .app-orbit::before, .app-orbit::after {
-      content: "";
-      position: absolute;
-      width: 14px;
-      height: 14px;
-      border-radius: 50%;
-      background: var(--lime);
-      box-shadow: 0 0 0 8px rgba(168,220,32,.12);
-    }
-    .app-orbit::before { top: 42px; right: 40px; }
-    .app-orbit::after { bottom: 38px; left: 48px; background: var(--orange); }
-    .app-badge {
-      position: relative;
-      width: 245px;
-      aspect-ratio: 1;
-      display: grid;
-      place-items: center;
-      padding: 40px;
-      border: 1px solid rgba(255,255,255,.35);
-      border-radius: 58px;
-      background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(232,248,242,.94));
-      box-shadow: 0 28px 60px rgba(0, 43, 37, .32);
-      transform: rotate(-4deg);
-    }
-    .app-badge img { width: 168px; }
-    .version-chip {
-      position: absolute;
-      right: -42px;
-      bottom: 32px;
-      padding: 13px 18px;
-      border-radius: 14px;
-      background: var(--orange);
-      color: white;
-      font-size: .78rem;
-      font-weight: 800;
-      box-shadow: 0 14px 30px rgba(85, 26, 0, .25);
-      transform: rotate(4deg);
-    }
+    .urgency-box { max-width: 600px; padding: 17px 18px; border-left: 4px solid var(--lime); background: rgba(0, 49, 43, .34); }
+    .urgency-box strong { display: block; margin-bottom: 3px; color: white; font-size: .95rem; }
+    .urgency-box span { color: #d9ece8; font-size: .85rem; }
 
     .section { padding: 94px 0; }
     .section-soft { background: var(--mist); }
@@ -295,43 +247,34 @@
     .download-card {
       position: relative;
       overflow: hidden;
-      padding: 34px;
-      border: 1px solid var(--line);
-      border-radius: 28px;
+      padding: 32px;
+      border: 0;
+      border-radius: 22px;
       background: white;
-      box-shadow: var(--shadow);
+      box-shadow: 0 24px 50px rgba(0, 42, 36, .28);
     }
-    .download-card::before {
-      content: "";
-      position: absolute;
-      width: 220px;
-      height: 220px;
-      top: -120px;
-      right: -90px;
-      border-radius: 50%;
-      background: rgba(168,220,32,.22);
-    }
+    .card-label { display: block; margin-bottom: 20px; color: var(--orange); font-size: .72rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; }
     .app-row { position: relative; display: flex; align-items: center; gap: 20px; margin-bottom: 24px; }
     .app-icon {
-      width: 90px;
-      height: 90px;
-      flex: 0 0 90px;
+      width: 76px;
+      height: 76px;
+      flex: 0 0 76px;
       display: grid;
       place-items: center;
-      padding: 13px;
-      border-radius: 24px;
-      background: linear-gradient(145deg, #f7fff7, #e8f5ef);
-      border: 1px solid #d8e9e2;
+      padding: 9px;
+      border-radius: 18px;
+      background: #eaf7f1;
+      border: 1px solid #cde6dc;
     }
-    .app-icon img { width: 100%; }
+    .app-icon img { width: 100%; height: 100%; object-fit: contain; }
     .app-title { margin-bottom: 4px; color: var(--green-900); font-size: 1.3rem; font-weight: 800; }
     .app-meta { color: var(--muted); font-size: .86rem; }
     .file-state {
       margin-bottom: 20px;
       padding: 14px 16px;
       border-radius: 12px;
-      color: #705323;
-      background: #fff7e7;
+      color: #5a3a16;
+      background: #fff1e8;
       font-size: .84rem;
       font-weight: 600;
     }
@@ -417,7 +360,7 @@
       gap: 46px;
       align-items: start;
     }
-    .footer-logo { width: 158px; margin-top: 4px; }
+    .footer-logo { width: 170px; margin-top: 4px; color: var(--green-800); }
     .footer-info { display: grid; grid-template-columns: 1.15fr 1fr 1fr; gap: 34px; }
     .footer-info h3 { margin-bottom: 12px; color: var(--green-900); font-size: .9rem; }
     .footer-info p, .footer-info a { color: #55706a; font-size: .84rem; text-decoration: none; }
@@ -479,9 +422,7 @@
       .nav.open { flex-wrap: wrap; padding-bottom: 18px; }
       .nav.open .nav-links { width: 100%; display: grid; order: 4; gap: 0; }
       .nav.open .nav-links a { padding: 13px 0; border-top: 1px solid rgba(255,255,255,.12); }
-      .hero-grid { grid-template-columns: 1fr .72fr; gap: 30px; }
-      .app-orbit { width: 290px; height: 290px; }
-      .app-badge { width: 205px; border-radius: 48px; }
+      .hero-grid { grid-template-columns: 1fr .86fr; gap: 34px; }
       .steps { grid-template-columns: repeat(2, 1fr); }
       .footer-top { grid-template-columns: 1fr; }
       .footer-info { grid-template-columns: repeat(3, 1fr); }
@@ -494,15 +435,12 @@
       .callbar span { display: none; }
       .site-header { position: relative; }
       .nav { min-height: 68px; gap: 10px; }
-      .brand { flex-basis: 132px; }
-      .brand img { width: 130px; }
+      .brand { flex-basis: 160px; }
+      .brand img { width: 44px; height: 38px; }
       .nav-actions .header-btn { display: none; }
-      .hero { padding: 62px 0 58px; }
+      .hero { padding: 48px 0 54px; }
       .hero-grid { grid-template-columns: 1fr; text-align: left; }
-      .hero-app { min-height: 305px; order: -1; }
-      .app-orbit { width: 275px; height: 275px; }
-      .app-badge { width: 190px; padding: 30px; border-radius: 44px; }
-      .version-chip { right: -30px; }
+      .download-card { padding: 26px 22px; }
       .section { padding: 70px 0; }
       .video-placeholder { min-height: 330px; }
       .download-wrap, .faq-grid { grid-template-columns: 1fr; gap: 44px; }
@@ -526,7 +464,8 @@
   <header class="site-header">
     <nav class="nav container" aria-label="Navegação principal">
       <a class="brand" href="https://www.cartaodetodos.com.br/" aria-label="Cartão de TODOS — página inicial">
-        <img src="https://www.cartaodetodos.com.br/_next/static/media/logo-cdt.d61ed25c.svg" alt="Cartão de TODOS">
+        <img src="assets/logo-symbol.png" alt="">
+        <span class="brand-copy"><small>Cartão de</small><strong>TODOS</strong></span>
       </a>
       <div class="nav-links" id="navLinks">
         <a href="https://www.cartaodetodos.com.br/agendar-consulta">Agendar consulta</a>
@@ -547,22 +486,27 @@
     <section class="hero">
       <div class="hero-grid container">
         <div class="hero-copy">
-          <span class="eyebrow">Aplicativo atualizado</span>
-          <h1>Baixe o app Cartão de TODOS</h1>
-          <p>Tenha consultas, benefícios, descontos e muito mais no seu celular. Veja o tutorial e instale a versão atualizada para Android.</p>
-          <div class="hero-pills" aria-label="Destaques">
-            <span>Instalação simples</span>
-            <span>Passo a passo completo</span>
-            <span>Android</span>
-          </div>
+          <span class="urgent-label">Atualização obrigatória</span>
+          <h1>O app antigo vai parar de funcionar.</h1>
+          <p>Instale agora a versão atualizada para continuar acessando consultas, descontos e todos os benefícios do seu Cartão de TODOS.</p>
+          <div class="urgency-box"><strong>Não espere perder o acesso.</strong><span>Baixe a nova versão e conclua a instalação no seu Android.</span></div>
         </div>
-        <div class="hero-app" aria-hidden="true">
-          <div class="app-orbit"></div>
-          <div class="app-badge">
-            <img src="https://www.cartaodetodos.com.br/_next/static/media/logo-cdt.d61ed25c.svg" alt="">
-            <span class="version-chip">APP ATUALIZADO</span>
+        <article class="download-card" aria-labelledby="appTitle">
+          <span class="card-label">Baixe a nova versão</span>
+          <div class="app-row">
+            <div class="app-icon"><img src="assets/logo-symbol.png" alt=""></div>
+            <div>
+              <div class="app-title" id="appTitle">Cartão de TODOS</div>
+              <div class="app-meta">Versão atualizada para Android</div>
+            </div>
           </div>
-        </div>
+          <div class="file-state">A versão anterior será descontinuada. Instale a atualização para continuar usando o app.</div>
+          <a class="download-btn" href="#" data-pending-download>
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            Baixar app atualizado
+          </a>
+          <p class="download-note">Disponível para aparelhos Android.</p>
+        </article>
       </div>
     </section>
 
@@ -582,36 +526,6 @@
             </div>
           </div>
         </div>
-      </div>
-    </section>
-
-    <section class="section" id="download">
-      <div class="download-wrap container">
-        <div>
-          <p class="section-kicker">Download do aplicativo</p>
-          <h2>A versão mais recente em poucos toques</h2>
-          <p class="section-lead">Quando o arquivo APK for adicionado, o botão ao lado iniciará o download diretamente no aparelho Android.</p>
-          <ul class="checklist">
-            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Área preparada para informar versão e tamanho do arquivo.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Fluxo direto para o passo a passo de instalação.</span></li>
-            <li><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg><span>Layout otimizado para celulares e computadores.</span></li>
-          </ul>
-        </div>
-        <article class="download-card" aria-labelledby="appTitle">
-          <div class="app-row">
-            <div class="app-icon"><img src="https://www.cartaodetodos.com.br/_next/static/media/logo-cdt.d61ed25c.svg" alt=""></div>
-            <div>
-              <div class="app-title" id="appTitle">Cartão de TODOS</div>
-              <div class="app-meta">Versão atualizada para Android</div>
-            </div>
-          </div>
-          <div class="file-state">Arquivo APK aguardando envio para publicação.</div>
-          <a class="download-btn" href="#" data-pending-download>
-            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3v12m0 0 5-5m-5 5-5-5M5 21h14" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
-            Baixar app atualizado
-          </a>
-          <p class="download-note">Disponível para aparelhos Android.</p>
-        </article>
       </div>
     </section>
 
@@ -651,7 +565,7 @@
     <div class="footer-main">
       <div class="container">
         <div class="footer-top">
-          <img class="footer-logo" src="https://www.cartaodetodos.com.br/_next/static/media/logo-cdt.d61ed25c.svg" alt="Cartão de TODOS">
+          <a class="brand footer-logo" href="https://www.cartaodetodos.com.br/" aria-label="Cartão de TODOS"><img src="assets/logo-symbol.png" alt=""><span class="brand-copy"><small>Cartão de</small><strong>TODOS</strong></span></a>
           <div class="footer-info">
             <div>
               <h3>Baixe o nosso app</h3>
